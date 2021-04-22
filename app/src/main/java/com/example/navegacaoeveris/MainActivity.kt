@@ -1,7 +1,12 @@
 package com.example.navegacaoeveris
 
+import android.content.ClipData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -31,5 +36,29 @@ class MainActivity : AppCompatActivity() {
                 )
             )
         )
+    }
+    private fun showToast(mensagem: String){
+        Toast.makeText(this, mensagem, Toast.LENGTH_SHORT).show()
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inFlater: MenuInflater =  menuInflater
+        inFlater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    private fun initialedrawler(){
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            (R.id.item_menu_1)->{
+                showToast("Exibindo item menu 1")
+                true
+            }(R.id.item_menu_2)->{
+                showToast("Exibindo item menu 2")
+                true
+            }else -> onOptionsItemSelected(item)
+        }
     }
 }

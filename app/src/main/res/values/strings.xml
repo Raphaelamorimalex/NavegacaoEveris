@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NavegacaoEveris</string>
+    <string name="menu_1"></string>
+    <string name="menu_2"></string>
 </resources>
